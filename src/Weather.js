@@ -3,6 +3,8 @@ import axios from "axios";
 import Forecast from "./Forecast";
 
 export default function Weather() {
+	const apiKey = "c757ac92a5aa99c5c15eeb0f1937036f";
+
 	let [searchInput, setSearchInput] = useState("");
 	let [loaded, setLoaded] = useState(false);
 	let [weather, setWeather] = useState(null);
@@ -11,7 +13,6 @@ export default function Weather() {
 	function handleSubmit(event) {
 		event.preventDefault();
 
-		let apiKey = "c757ac92a5aa99c5c15eeb0f1937036f";
 		let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchInput}&units=metric&appid=${apiKey}`;
 
 		axios.get(apiUrl).then(showWeather);
@@ -45,7 +46,6 @@ export default function Weather() {
 		let lon = position.coords.longitude;
 
 		let units = "metric";
-		let apiKey = "c757ac92a5aa99c5c15eeb0f1937036f";
 		let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=${units}&appid=${apiKey}`;
 
 		axios.get(apiUrl).then(showWeather);
@@ -63,7 +63,6 @@ export default function Weather() {
 		let lat = coordinates.lat;
 		let lon = coordinates.lon;
 		let units = "metric";
-		let apiKey = "c757ac92a5aa99c5c15eeb0f1937036f";
 		let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=${units}&exclude=hourly,minutely&appid=${apiKey}`;
 
 		axios.get(apiUrl).then(showForecast);
@@ -168,7 +167,7 @@ export default function Weather() {
 					</p>
 				</div>
 				<div className="col-6">
-					<p id="weather-description">Sunny</p>
+					<p id="weather-description">Clear sky</p>
 					<p id="weather-wind">Wind XX km/h</p>
 					<p id="weather-humid">Humidity XX %</p>
 				</div>
@@ -192,7 +191,7 @@ export default function Weather() {
 										<img
 											src={weather.icon}
 											id="weather-icon"
-											alt="Weather Icon"
+											alt={weather.description}
 										/>
 									</p>
 								</div>
