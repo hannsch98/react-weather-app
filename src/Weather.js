@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import ReactAnimatedWeather from "react-animated-weather/build/ReactAnimatedWeather";
 import Forecast from "./Forecast";
 
 export default function Weather(props) {
@@ -193,6 +194,16 @@ export default function Weather(props) {
 
 		axios.get(apiUrl).then(showWeather);
 
-		return "Loading...";
+		return (
+			<div className="text-center">
+				<p>Loading...</p>
+				<ReactAnimatedWeather
+					icon="PARTLY_CLOUDY_DAY"
+					color="#0071c3"
+					size="64px"
+					animate="true"
+				/>
+			</div>
+		);
 	}
 }
