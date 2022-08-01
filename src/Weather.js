@@ -14,28 +14,25 @@ export default function Weather(props) {
 		animate: true,
 	};
 
-	let [searchInput, setSearchInput] = useState("");
+	let [city, setCity] = useState(props.defaultCity);
 	let [loaded, setLoaded] = useState(false);
 	let [weather, setWeather] = useState(null);
 	//let [forecast, setForecast] = useState(null);
 
 	function handleSubmit(event) {
 		event.preventDefault();
-
-		let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchInput}&units=metric&appid=${apiKey}`;
-
-		axios.get(apiUrl).then(showWeather);
+		search();
 	}
 
 	function search() {
-		let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&units=metric&appid=${apiKey}`;
+		let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
 
 		axios.get(apiUrl).then(showWeather);
 	}
 
 	function updateInput(event) {
 		event.preventDefault();
-		setSearchInput(event.target.value);
+		setCity(event.target.value);
 	}
 
 	function showWeather(response) {
