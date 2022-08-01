@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import Forecast from "./Forecast";
 
-export default function Weather() {
+export default function Weather(props) {
 	const apiKey = "c757ac92a5aa99c5c15eeb0f1937036f";
 
 	let [searchInput, setSearchInput] = useState("");
@@ -151,30 +151,6 @@ export default function Weather() {
 		</form>
 	);
 
-	let defaultWeather = (
-		<div className="col-8">
-			<p>Current weather in</p>
-			<div className="row">
-				<div className="col-6">
-					<h2 id="current-city">Vienna</h2>
-					<p>
-						<span id="current-temp">XX °C</span>
-						<img
-							src="http://openweathermap.org/img/wn/01d@2x.png"
-							id="weather-icon"
-							alt="clear sky"
-						/>
-					</p>
-				</div>
-				<div className="col-6">
-					<p id="weather-description">Clear sky</p>
-					<p id="weather-wind">Wind XX km/h</p>
-					<p id="weather-humid">Humidity XX %</p>
-				</div>
-			</div>
-		</div>
-	);
-
 	if (loaded) {
 		return (
 			<div className="Weather">
@@ -213,21 +189,10 @@ export default function Weather() {
 			</div>
 		);
 	} else {
-		return (
-			<div className="Weather">
-				<div className="container">
-					<div className="row">
-						{/* Current weather */}
-						{defaultWeather}
+		let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&units=metric&appid=${apiKey}`;
 
-						{/* Search Box */}
-						<div className="col-4" id="search-box">
-							{searchForm}
-						</div>
-					</div>
-					<Forecast />
-				</div>
-			</div>
-		);
+		axios.get(apiUrl).then(showWeather);
+
+		return "Loading...";
 	}
 }
