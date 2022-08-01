@@ -2,9 +2,17 @@ import React, { useState } from "react";
 import axios from "axios";
 import ReactAnimatedWeather from "react-animated-weather/build/ReactAnimatedWeather";
 import Forecast from "./Forecast";
+import WeatherData from "./WeatherData";
 
 export default function Weather(props) {
 	const apiKey = "c757ac92a5aa99c5c15eeb0f1937036f";
+
+	const defaults = {
+		icon: "PARTLY_CLOUDY_DAY",
+		color: "#0071c3",
+		size: 64,
+		animate: true,
+	};
 
 	let [searchInput, setSearchInput] = useState("");
 	let [loaded, setLoaded] = useState(false);
@@ -15,6 +23,12 @@ export default function Weather(props) {
 		event.preventDefault();
 
 		let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchInput}&units=metric&appid=${apiKey}`;
+
+		axios.get(apiUrl).then(showWeather);
+	}
+
+	function search() {
+		let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&units=metric&appid=${apiKey}`;
 
 		axios.get(apiUrl).then(showWeather);
 	}
@@ -158,27 +172,7 @@ export default function Weather(props) {
 				<div className="container">
 					<div className="row">
 						{/* Current weather */}
-						<div className="col-8">
-							<p>Current weather in</p>
-							<div className="row">
-								<div className="col-6">
-									<h2 id="current-city">{weather.city}</h2>
-									<p>
-										<span id="current-temp">{weather.temp} °C</span>
-										<img
-											src={weather.icon}
-											id="weather-icon"
-											alt={weather.description}
-										/>
-									</p>
-								</div>
-								<div className="col-6">
-									<p id="weather-description">{weather.description}</p>
-									<p id="weather-wind">Wind {weather.wind} km/h</p>
-									<p id="weather-humid">Humidity {weather.humidity} %</p>
-								</div>
-							</div>
-						</div>
+						<WeatherData data={weather} />
 
 						{/* Search Box */}
 						<div className="col-4" id="search-box">
@@ -190,18 +184,15 @@ export default function Weather(props) {
 			</div>
 		);
 	} else {
-		let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&units=metric&appid=${apiKey}`;
-
-		axios.get(apiUrl).then(showWeather);
-
+		search();
 		return (
 			<div className="text-center">
 				<p>Loading...</p>
 				<ReactAnimatedWeather
-					icon="PARTLY_CLOUDY_DAY"
-					color="#0071c3"
-					size="64"
-					animate="true"
+					icon={defaults.icon}
+					color={defaults.color}
+					size={defaults.size}
+					animate={defaults.animate}
 				/>
 			</div>
 		);
