@@ -200,7 +200,7 @@ export default function Weather(props) {
 				<ReactAnimatedWeather
 					icon="PARTLY_CLOUDY_DAY"
 					color="#0071c3"
-					size="64px"
+					size="64"
 					animate="true"
 				/>
 			</div>
