@@ -1,18 +1,10 @@
 import React, { useState } from "react";
 import axios from "axios";
 import ReactAnimatedWeather from "react-animated-weather/build/ReactAnimatedWeather";
-import Forecast from "./Forecast";
 import WeatherData from "./WeatherData";
 
 export default function Weather(props) {
 	const apiKey = "c757ac92a5aa99c5c15eeb0f1937036f";
-
-	const defaults = {
-		icon: "PARTLY_CLOUDY_DAY",
-		color: "#0071c3",
-		size: 64,
-		animate: true,
-	};
 
 	let [city, setCity] = useState(props.defaultCity);
 	let [loaded, setLoaded] = useState(false);
@@ -176,7 +168,6 @@ export default function Weather(props) {
 							{searchForm}
 						</div>
 					</div>
-					<Forecast />
 				</div>
 			</div>
 		);
@@ -185,11 +176,12 @@ export default function Weather(props) {
 		return (
 			<div className="text-center">
 				<p>Loading...</p>
+
 				<ReactAnimatedWeather
-					icon={defaults.icon}
-					color={defaults.color}
-					size={defaults.size}
-					animate={defaults.animate}
+					icon="PARTLY_CLOUDY_DAY"
+					color="#0071c3"
+					size={64}
+					animate={true}
 				/>
 			</div>
 		);

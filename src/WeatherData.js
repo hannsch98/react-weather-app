@@ -1,4 +1,6 @@
 import React from "react";
+import WeatherTemp from "./WeatherTemp";
+import "./Weather.css";
 
 export default function WeatherData(props) {
 	return (
@@ -7,14 +9,14 @@ export default function WeatherData(props) {
 			<div className="row">
 				<div className="col-6">
 					<h2 id="current-city">{props.data.city}</h2>
-					<p>
-						<span id="current-temp">{props.data.temp} °C</span>
+					<div>
 						<img
 							src={props.data.icon}
 							id="weather-icon"
 							alt={props.data.description}
 						/>
-					</p>
+						<WeatherTemp celsius={props.data.temp} />
+					</div>
 				</div>
 				<div className="col-6">
 					<p id="weather-description">{props.data.description}</p>
