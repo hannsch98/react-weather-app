@@ -1,12 +1,13 @@
 import React from "react";
 import WeatherTemp from "./WeatherTemp";
 import "./Weather.css";
+import "./WeatherData.css";
 
 export default function WeatherData(props) {
 	return (
 		<div className="WeatherData col-8">
 			<p>Current weather in</p>
-			<div className="row">
+			<div className="row mb-4">
 				<div className="col-6">
 					<h2 id="current-city">{props.data.city}</h2>
 					<div>

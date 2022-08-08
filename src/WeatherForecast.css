@@ -1,0 +1,8 @@
+div.WeatherForecast {
+	margin-top: 20px;
+}
+
+.WeatherForecast h3 {
+	font-size: 18px;
+	font-weight: bold;
+}
