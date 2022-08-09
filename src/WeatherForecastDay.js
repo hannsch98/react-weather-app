@@ -19,7 +19,7 @@ export default function WeatherForecastDay(props) {
 		day: formatDay(),
 		temp: formatTemp(),
 		icon: `http://openweathermap.org/img/wn/${props.data.weather[0].icon}@2x.png`,
-		wind: props.data.wind,
+		wind: Math.round(props.data.wind_speed),
 		humidity: props.data.humidity,
 	};
 

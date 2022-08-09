@@ -17,13 +17,10 @@ export default function WeatherForecast(props) {
 		setLoaded(true);
 
 		let forecastData = response.data.daily;
-
 		setForecast(forecastData);
 	}
 
 	if (loaded) {
-		//console.log(forecast);
-
 		return (
 			<div className="WeatherForecast">
 				<h3>The next 5 days:</h3>
@@ -35,6 +32,8 @@ export default function WeatherForecast(props) {
 									<WeatherForecastDay data={dailyForecast} />
 								</div>
 							);
+						} else {
+							return null;
 						}
 					})}
 				</div>
