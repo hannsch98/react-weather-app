@@ -12,42 +12,27 @@ export default function WeatherForecast(props) {
 
 		let forecastData = response.data.daily;
 
+		setForecast(forecastData);
 		console.log(forecastData);
-
-		setForecast(
-			forecastData
-			/* 			day: forecastData[0].dt,
-			temp: Math.round(forecastData[0].temp.day),
-			icon: `http://openweathermap.org/img/wn/${forecastData[0].weather[0].icon}@2x.png`,
-			wind: forecastData[0].wind_speed,
-			humidity: forecastData[0].humidity, */
-		);
-
-		//let forecastDay = formatDay(forecastData.dt);
-
-		//array of forecast data
-		/* 		let forecastData = response.data.daily;
-
-		forecastData.forEach(function (forecastDay, index) {
-			if (index < 5) {
-				console.log(forecastData);
-				setForecast({
-					day: formatDay(forecastDay.dt),
-					temp: Math.round(forecastDay.temp.day),
-					icon: `http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png`,
-					wind: Math.round(forecastDay.wind_speed),
-					humidity: forecastDay.humidity,
-				});
-			}
-		}); */
 	}
 
 	if (loaded) {
 		//console.log(forecast);
 
 		return (
-			<div className="WeatherForecast" id="forecast">
-				<WeatherForecastDay data={forecast[0]} />
+			<div className="WeatherForecast">
+				<h3>The next 5 days:</h3>
+				<div className="row">
+					{forecast.map(function (dailyForecast, index) {
+						if (index < 5) {
+							return (
+								<div className="col" key={index}>
+									<WeatherForecastDay data={dailyForecast} />
+								</div>
+							);
+						}
+					})}
+				</div>
 			</div>
 		);
 	} else {

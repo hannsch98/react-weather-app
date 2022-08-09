@@ -1,8 +1,10 @@
 div.WeatherForecast {
 	margin-top: 20px;
+	text-align: center;
 }
 
 .WeatherForecast h3 {
 	font-size: 18px;
 	font-weight: bold;
+	text-align: left;
 }

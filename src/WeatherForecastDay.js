@@ -25,25 +25,20 @@ export default function WeatherForecastDay(props) {
 
 	return (
 		<div className="WeatherForecastDay">
-			<h3>The next 5 days:</h3>
-			<div className="row">
-				<div className="col">
-					<div className="card">
-						<h5 className="card-header forecast-day">{forecast.day}</h5>
-						<ul className="list-group list-group-flush">
-							<li className="list-group-item forecast-temp">
-								{forecast.temp} °C
-								<img src={forecast.icon} id="forecast-icon" alt="clear sky" />
-							</li>
-							<li className="list-group-item forecast-wind">
-								Wind {forecast.wind} km/h
-							</li>
-							<li className="list-group-item forecast-humid">
-								Humidity {forecast.humidity} %
-							</li>
-						</ul>
-					</div>
-				</div>
+			<div className="card">
+				<h5 className="card-header forecast-day">{forecast.day}</h5>
+				<ul className="list-group list-group-flush">
+					<li className="list-group-item forecast-temp">
+						{forecast.temp} °C
+						<img src={forecast.icon} id="forecast-icon" alt="clear sky" />
+					</li>
+					<li className="list-group-item forecast-wind">
+						Wind {forecast.wind} km/h
+					</li>
+					<li className="list-group-item forecast-humid">
+						Humidity {forecast.humidity} %
+					</li>
+				</ul>
 			</div>
 		</div>
 	);
