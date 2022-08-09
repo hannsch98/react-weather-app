@@ -1,3 +1,15 @@
 .WeatherData {
 	border-bottom: 1px solid #0071c3;
 }
+
+.WeatherData #weather-description:first-letter {
+	text-transform: capitalize;
+}
+
+.WeatherData #weather-icon {
+	display: inline;
+	opacity: 1;
+	position: relative;
+	top: -10px;
+	width: 25%;
+}

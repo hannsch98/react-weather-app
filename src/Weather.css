@@ -1,3 +1,11 @@
-div.WeatherTemp {
-	display: inline;
+.Weather #search-box {
+	border: 2px solid var(--primary-color);
+	border-radius: 15px;
+	height: min-content;
+	padding: 20px 20px;
+	width: 30%;
+}
+
+.Weather #search-label {
+	padding-bottom: 5px;
 }

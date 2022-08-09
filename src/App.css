@@ -1,38 +1,93 @@
-.App {
-  text-align: center;
+/* Colour variables */
+:root {
+	--primary-color: #0071c3;
+	--hover-color: #a11900;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* general Tags */
+body {
+	font-family: "Montserrat", sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h1 {
+	font-family: "Dancing Script", cursive;
+	font-size: 50px;
+	text-align: center;
+	color: var(--primary-color);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+h2 {
+	color: var(--primary-color);
+	font-weight: 700;
 }
 
-.App-link {
-  color: #61dafb;
+h5 {
+	color: var(--primary-color);
+	font-weight: 600;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+hr {
+	background-color: var(--primary-color);
+	color: var(--primary-color);
+	opacity: 1;
+	width: 45%;
+}
+
+img {
+	display: block;
+	margin: 0 auto;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	opacity: 0.5;
+}
+
+a {
+	color: var(--primary-color);
+}
+a:hover {
+	color: var(--hover-color);
+}
+
+/* Classes */
+
+.container {
+	padding: 30px;
+}
+
+.btn-primary {
+	background-color: var(--primary-color);
+	border-color: var(--primary-color);
+	margin-top: 15px;
+}
+
+.btn-primary:hover {
+	background-color: #fff;
+	color: var(--primary-color);
+	transition: all 200ms ease-in-out;
+}
+
+.btn-secondary {
+	background-color: #fff;
+	border-color: var(--primary-color);
+	color: var(--primary-color);
+	margin-top: 15px;
+	margin-left: 15px;
+}
+
+.btn-secondary:hover {
+	background-color: var(--primary-color);
+	color: #fff;
+	transition: all 200ms ease-in-out;
+}
+
+.btn-link {
+	padding: 0;
+}
+.btn-link:hover {
+	color: var(--hover-color);
+}
+
+.col-3 {
+	width: 20%;
 }

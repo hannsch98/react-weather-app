@@ -3,6 +3,7 @@ import axios from "axios";
 import ReactAnimatedWeather from "react-animated-weather/build/ReactAnimatedWeather";
 import WeatherData from "./WeatherData";
 import WeatherForecast from "./WeatherForecast";
+import "./Weather.css";
 
 export default function Weather(props) {
 	const apiKey = "c757ac92a5aa99c5c15eeb0f1937036f";

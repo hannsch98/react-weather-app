@@ -1,4 +1,4 @@
-import "./styles.css";
+import "./App.css";
 import Weather from "./Weather";
 import Header from "./Header";
 import Footer from "./Footer";

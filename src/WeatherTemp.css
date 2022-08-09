@@ -1,0 +1,7 @@
+div.WeatherTemp {
+	display: inline;
+}
+
+.WeatherTemp #current-temp {
+	font-size: 40px;
+}

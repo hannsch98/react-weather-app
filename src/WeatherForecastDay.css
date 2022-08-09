@@ -1,0 +1,5 @@
+.WeatherForecastDay #forecast-icon {
+	opacity: 1;
+	position: relative;
+	width: 50%;
+}
