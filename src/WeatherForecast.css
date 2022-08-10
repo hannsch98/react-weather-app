@@ -8,3 +8,9 @@ div.WeatherForecast {
 	font-weight: bold;
 	text-align: left;
 }
+
+@media (max-width: 767px) {
+	.WeatherForecast .col {
+		flex: none;
+	}
+}

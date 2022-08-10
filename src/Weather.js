@@ -97,13 +97,13 @@ export default function Weather(props) {
 			<div className="Weather">
 				<div className="container">
 					<div className="row">
-						{/* Current weather */}
-						<WeatherData data={weather} />
-
 						{/* Search Box */}
 						<div className="col-4" id="search-box">
 							{searchForm}
 						</div>
+
+						{/* Current weather */}
+						<WeatherData data={weather} />
 
 						<WeatherForecast coordinates={weather} />
 					</div>

@@ -24,7 +24,7 @@ export default function WeatherTemp(props) {
 					{celsiusTemp} <span className="unit">°C</span>
 				</span>
 				<br />
-				<a href="/" onClick={convertToFahrenheit}>
+				<a href="/" onClick={convertToFahrenheit} className="convert-link">
 					Convert to Fahrenheit
 				</a>
 			</div>
@@ -36,7 +36,7 @@ export default function WeatherTemp(props) {
 					{fahrenheitTemp} <span className="unit">°F</span>
 				</span>
 				<br />
-				<a href="/" onClick={convertToCelsius}>
+				<a href="/" onClick={convertToCelsius} className="convert-link">
 					Convert to Celsius
 				</a>
 			</div>

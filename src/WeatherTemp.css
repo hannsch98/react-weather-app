@@ -5,3 +5,13 @@ div.WeatherTemp {
 .WeatherTemp #current-temp {
 	font-size: 40px;
 }
+
+@media (max-width: 500px) {
+	.WeatherTemp #current-temp {
+		font-size: 24px;
+	}
+
+	.WeatherTemp .convert-link {
+		font-size: 12px;
+	}
+}

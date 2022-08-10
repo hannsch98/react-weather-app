@@ -1,11 +1,32 @@
+.Weather {
+	display: inline;
+}
+
 .Weather #search-box {
 	border: 2px solid var(--primary-color);
 	border-radius: 15px;
 	height: min-content;
+	margin-right: 20px;
 	padding: 20px 20px;
 	width: 30%;
 }
 
 .Weather #search-label {
 	padding-bottom: 5px;
+}
+
+@media (max-width: 769px) {
+	.Weather {
+		text-align: center;
+	}
+
+	.Weather #search-box {
+		margin-bottom: 20px;
+		padding: 10px;
+		width: 100%;
+	}
+
+	.Weather .container {
+		padding-top: 10px;
+	}
 }

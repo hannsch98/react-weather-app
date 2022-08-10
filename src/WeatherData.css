@@ -13,3 +13,10 @@
 	top: -10px;
 	width: 25%;
 }
+
+@media (max-width: 767px) {
+	.WeatherData.col-8 {
+		margin: 0 auto;
+		width: 100%;
+	}
+}

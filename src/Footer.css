@@ -6,3 +6,9 @@
 	text-align: center;
 	width: 50%;
 }
+
+@media (max-width: 767px) {
+	.Footer footer {
+		width: 100%;
+	}
+}

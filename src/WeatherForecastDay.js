@@ -30,8 +30,8 @@ export default function WeatherForecastDay(props) {
 				<h5 className="card-header forecast-day">{forecast.day}</h5>
 				<ul className="list-group list-group-flush">
 					<li className="list-group-item forecast-temp">
-						{forecast.temp} °C
 						<img src={forecast.icon} id="forecast-icon" alt="clear sky" />
+						{forecast.temp} °C
 					</li>
 					<li className="list-group-item forecast-wind">
 						Wind {forecast.wind} km/h

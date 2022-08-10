@@ -3,3 +3,14 @@
 	position: relative;
 	width: 50%;
 }
+
+@media (max-width: 767px) {
+	.WeatherForecastDay #forecast-icon {
+		display: inline;
+		width: 25%;
+	}
+
+	.WeatherForecastDay {
+		margin-bottom: 20px;
+	}
+}

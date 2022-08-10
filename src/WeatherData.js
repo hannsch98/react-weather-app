@@ -8,7 +8,7 @@ export default function WeatherData(props) {
 		<div className="WeatherData col-8">
 			<p>Current weather in</p>
 			<div className="row mb-4">
-				<div className="col-6">
+				<div className="col">
 					<h2 id="current-city">{props.data.city}</h2>
 					<div>
 						<img
@@ -19,7 +19,7 @@ export default function WeatherData(props) {
 						<WeatherTemp celsius={props.data.temp} />
 					</div>
 				</div>
-				<div className="col-6">
+				<div className="col">
 					<p id="weather-description">{props.data.description}</p>
 					<p id="weather-wind">Wind {props.data.wind} km/h</p>
 					<p id="weather-humid">Humidity {props.data.humidity} %</p>
