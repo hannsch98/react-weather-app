@@ -29,6 +29,7 @@ export default function Header() {
 
 	//set date & time to current one
 	let currentTime = new Date();
+
 	let currentWeekDay = days[currentTime.getDay()];
 
 	let currentDate = currentTime.getDate();

@@ -45,6 +45,11 @@ export default function Weather(props) {
 	}
 
 	// geoLocation
+	function getCurrentPosition(event) {
+		event.preventDefault();
+		navigator.geolocation.getCurrentPosition(showPosition);
+	}
+
 	function showPosition(position) {
 		let lat = position.coords.latitude;
 		let lon = position.coords.longitude;
@@ -53,11 +58,6 @@ export default function Weather(props) {
 		let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=${units}&appid=${apiKey}`;
 
 		axios.get(apiUrl).then(showWeather);
-	}
-
-	function getCurrentPosition(event) {
-		event.preventDefault();
-		navigator.geolocation.getCurrentPosition(showPosition);
 	}
 
 	let searchForm = (
